@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -14,15 +15,16 @@
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen flex items-center justify-center p-4">
 
-    <div class="max-w-md w-full bg-slate-800 rounded-2xl shadow-2xl border border-slate-700 overflow-hidden text-center p-6 space-y-6">
+    <div class="max-w-md w-full bg-slate-800/90 backdrop-blur-md rounded-2xl shadow-2xl border border-slate-700 overflow-hidden text-center p-6 space-y-6">
         
         <div>
-            <h1 class="text-2xl font-bold text-white tracking-wide">โปรไฟล์</h1>
-            <p class="text-xs text-slate-400 mt-1">OnchumaBoonmatoon / onchuma-aa</p>
+            <span class="inline-block px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-2">GitHub Profile</span>
+            <h1 class="text-2xl font-bold text-white tracking-wide">Onchuma Boonmatoon</h1>
+            <p class="text-xs text-slate-400 mt-1">@OnchumaBoonmatoon / onchuma-aa</p>
         </div>
 
-        <div class="relative group w-48 h-48 mx-auto">
-            <div class="absolute -inset-1 bg-gradient-to-r from-pink-500 to-indigo-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+        <div class="relative group w-52 h-52 mx-auto cursor-pointer" onclick="openLightbox()">
+            <div class="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
             <div class="relative w-full h-full rounded-full overflow-hidden border-4 border-slate-800 bg-slate-900 flex items-center justify-center">
                 <img 
                     id="profileImg"
@@ -30,6 +32,25 @@
                     alt="Profile Picture" 
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     onerror="handleImageError()"
+                />
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                    <span class="text-xs font-medium text-white bg-slate-900/80 px-3 py-1.5 rounded-full border border-slate-700 shadow flex items-center gap-1">
+                        🔍 คลิกเพื่อดูรูปขนาดเต็ม
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hidden modal for full image view -->
+        <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4" onclick="closeLightbox()">
+            <div class="relative max-w-2xl max-h-[90vh]" onclick="event.stopPropagation()">
+                <button onclick="closeLightbox()" class="absolute -top-10 right-0 text-white hover:text-slate-300 text-sm bg-slate-800/80 px-3 py-1 rounded-full border border-slate-700">
+                    ✕ ปิด
+                </button>
+                <img 
+                    src="https://raw.githubusercontent.com/OnchumaBoonmatoon/onchuma-aa/main/1787213535183.jpg" 
+                    alt="Full View" 
+                    class="max-w-full max-h-[80vh] rounded-2xl object-contain shadow-2xl border border-slate-700"
                 />
             </div>
         </div>
@@ -65,10 +86,17 @@
             statusMsg.classList.remove('hidden');
         }
 
+        function openLightbox() {
+            document.getElementById('lightbox').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+
         function copyLink() {
             const rawUrl = 'https://raw.githubusercontent.com/OnchumaBoonmatoon/onchuma-aa/main/1787213535183.jpg';
             
-            // Fallback for copy command in iframe environment
             const tempInput = document.createElement('input');
             tempInput.value = rawUrl;
             document.body.appendChild(tempInput);
