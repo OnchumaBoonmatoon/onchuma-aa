@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Alpine.js for lightweight interactivity -->
+    <!-- Alpine.js for lightweight reactivity -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -84,7 +84,6 @@
             <!-- Desktop Nav -->
             <nav class="hidden md:flex items-center gap-1 bg-sky-50/80 p-1.5 rounded-full border border-sky-100 text-sm font-medium">
                 <a href="#profile" class="px-4 py-2 rounded-full hover:bg-white hover:text-sky-600 text-slate-600 transition shadow-xs">เกี่ยวกับอุ้ม</a>
-                <a href="#sop" class="px-4 py-2 rounded-full hover:bg-white hover:text-sky-600 text-slate-600 transition shadow-xs">ความตั้งใจ</a>
                 <a href="#education" class="px-4 py-2 rounded-full hover:bg-white hover:text-sky-600 text-slate-600 transition shadow-xs">การศึกษา</a>
                 <a href="#activities" class="px-4 py-2 rounded-full hover:bg-white hover:text-sky-600 text-slate-600 transition shadow-xs">กิจกรรม</a>
                 <a href="#certificates" class="px-4 py-2 rounded-full hover:bg-white hover:text-sky-600 text-slate-600 transition shadow-xs">เกียรติบัตร</a>
@@ -104,7 +103,6 @@
         <!-- Mobile Menu -->
         <div x-show="mobileMenuOpen" x-transition class="md:hidden bg-white/95 border-b border-sky-100 px-6 py-4 space-y-2 text-center cute-font text-slate-700" x-cloak>
             <a @click="mobileMenuOpen = false" href="#profile" class="block py-2 rounded-xl hover:bg-sky-50 text-sky-800">เกี่ยวกับอุ้ม</a>
-            <a @click="mobileMenuOpen = false" href="#sop" class="block py-2 rounded-xl hover:bg-sky-50 text-sky-800">ความตั้งใจศึกษาต่อ</a>
             <a @click="mobileMenuOpen = false" href="#education" class="block py-2 rounded-xl hover:bg-sky-50 text-sky-800">ประวัติการศึกษา</a>
             <a @click="mobileMenuOpen = false" href="#activities" class="block py-2 rounded-xl hover:bg-sky-50 text-sky-800">กิจกรรมและผลงาน</a>
             <a @click="mobileMenuOpen = false" href="#certificates" class="block py-2 rounded-xl hover:bg-sky-50 text-sky-800">เกียรติบัตร</a>
@@ -154,7 +152,7 @@
                     </p>
                     <div class="mt-4 pt-4 border-t border-sky-50 flex items-center justify-center gap-2 text-xs text-slate-500">
                         <i data-lucide="graduation-cap" class="w-4 h-4 text-sky-500"></i>
-                        <span>สาขาวิชาสาธารณสุขชุมชน | คณะสาธารณสุขศาสตร์</span>
+                        <span>วิทยาลัยการสาธารณสุขสิรินธร จังหวัดขอนแก่น | คณะสาธารณสุขศาสตร์ สาขาวิชาสาธารณสุขชุมชน</span>
                     </div>
                 </div>
 
@@ -264,39 +262,6 @@
                                     <p class="text-xs text-slate-600 mt-1">อาชีพ: ค้าขาย | โทร: 083-363-1064</p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Statement of Purpose (SOP) Section -->
-        <section id="sop" class="py-16 relative">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-white rounded-3xl p-8 sm:p-10 border border-sky-100 shadow-lg relative overflow-hidden">
-                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-sky-100 rounded-full blur-2xl -z-0"></div>
-                    
-                    <div class="relative z-10">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="p-3 bg-sky-100 rounded-2xl text-sky-600">
-                                <i data-lucide="file-text" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <span class="text-sky-500 font-semibold text-xs uppercase tracking-wider">Statement of Purpose</span>
-                                <h3 class="text-2xl font-bold cute-font text-slate-800">เหตุผลและความตั้งใจในการศึกษาต่อ</h3>
-                            </div>
-                        </div>
-
-                        <div class="space-y-4 text-slate-600 leading-relaxed text-sm sm:text-base">
-                            <p>
-                                แฟ้มสะสมผลงานฉบับนี้ เป็นการรวบรวมผลงานสำหรับการสมัครเข้าศึกษาต่อในสายงานสาธารณสุขศาสตร์ ดิฉันนางสาวอรชุมา บุญมาตุ่น ได้สะสมประสบการณ์และผลงานทั้งด้านการเรียน การทำกิจกรรม และการฝึกประสบการณ์ในสถานบริการสาธารณสุข เพื่อยืนยันถึงความตั้งใจและความมุ่งมั่นของดิฉัน
-                            </p>
-                            <p class="bg-sky-50/60 p-4 rounded-2xl border-l-4 border-sky-400 italic">
-                                "ดิฉันมีความสนใจในด้านสุขภาพ การส่งเสริมพฤติกรรมสุขภาพ และการดูแลประชาชนให้มีคุณภาพชีวิตที่ดีมาตั้งแต่ระดับมัธยมศึกษา โดยเฉพาะช่วงที่ได้เข้าร่วมฝึกประสบการณ์ที่โรงพยาบาลส่งเสริมสุขภาพตำบล (รพ.สต.พระบุ) ทำให้ได้เห็นถึงความสำคัญของการป้องกันโรคมากกว่าการรักษาโรค และเข้าใจบทบาทของเจ้าหน้าที่สาธารณสุขอย่างแท้จริง"
-                            </p>
-                            <p>
-                                ดิฉันมีความฝันอยากเป็นนักสาธารณสุขที่ดี มีจิตอาสาและความรับผิดชอบ เพื่อร่วมสร้างสังคมที่มีสุขภาพดีอย่างยั่งยืน ความสุขของดิฉันคือการได้เห็นผู้คนมีสุขภาพที่ดี และสามารถเข้าถึงบริการสุขภาพอย่างทั่วถึง ดิฉันพร้อมที่จะตั้งใจเรียนรู้ ฝึกฝน และพัฒนาตนเองให้เป็นบุคลากรที่มีคุณภาพ
-                            </p>
                         </div>
                     </div>
                 </div>
