@@ -1,789 +1,128 @@
 <!DOCTYPE html>
-<html lang="th" class="scroll-smooth">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - อรชุมา บุญมาตุ่น (อุ้ม) | Onchuma Boonmatoon</title>
-    <!-- Tailwind CSS CDN -->
+    <title>โปรไฟล์ - Onchuma Boonmatoon</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Prompt & Mitr -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Alpine.js for lightweight interactivity -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        pastel: {
-                            blue: '#e0f2fe',
-                            soft: '#f0f9ff',
-                            deep: '#0284c7',
-                            dark: '#0c4a6e',
-                            accent: '#38bdf8',
-                            card: '#ffffff',
-                            subtle: '#bae6fd'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Prompt', 'sans-serif'],
-                        cute: ['Mitr', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Prompt', sans-serif;
-            background-color: #f0f9ff;
-            color: #1e293b;
-        }
-        .cute-font {
-            font-family: 'Mitr', sans-serif;
-        }
-        .cute-border {
-            border-radius: 2rem;
-        }
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-        }
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f0f9ff;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #bae6fd;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #38bdf8;
+            font-family: 'Kanit', sans-serif;
         }
     </style>
 </head>
-<body class="bg-pastel-soft text-slate-700 antialiased selection:bg-sky-200 selection:text-sky-900 min-h-screen flex flex-col justify-between" x-data="portfolioApp()">
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col items-center justify-center p-4">
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 glass-nav border-b border-sky-100/80 shadow-sm transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#home" class="flex items-center gap-2 text-sky-600 hover:text-sky-700 transition">
-                <div class="w-10 h-10 rounded-2xl bg-sky-100 flex items-center justify-center text-sky-500 font-bold text-xl cute-font shadow-inner">
-                    ✨
-                </div>
-                <div>
-                    <span class="cute-font text-xl font-medium tracking-wide block leading-none text-sky-800">Aoom.porfolio</span>
-                    <span class="text-xs text-sky-400 font-light">Onchuma Boonmatoon</span>
-                </div>
-            </a>
-
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-1 bg-sky-50/80 p-1.5 rounded-full border border-sky-100 text-sm font-medium">
-                <a href="#profile" class="px-4 py-2 rounded-full hover:bg-white hover:text-sky-600 text-slate-600 transition shadow-xs">เกี่ยวกับอุ้ม</a>
-                <a href="#sop" class="px-4 py-2 rounded-full hover:bg-white hover:text-sky-600 text-slate-600 transition shadow-xs">ความตั้งใจ</a>
-                <a href="#education" class="px-4 py-2 rounded-full hover:bg-white hover:text-sky-600 text-slate-600 transition shadow-xs">การศึกษา</a>
-                <a href="#activities" class="px-4 py-2 rounded-full hover:bg-white hover:text-sky-600 text-slate-600 transition shadow-xs">กิจกรรม</a>
-                <a href="#certificates" class="px-4 py-2 rounded-full hover:bg-white hover:text-sky-600 text-slate-600 transition shadow-xs">เกียรติบัตร</a>
-            </nav>
-
-            <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white px-5 py-2.5 rounded-full text-sm font-medium transition shadow-md shadow-sky-200 hover:scale-105 active:scale-95">
-                <i data-lucide="heart" class="w-4 h-4 fill-white/20"></i> ติดต่อ
-            </a>
-
-            <!-- Mobile Menu Button -->
-            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 rounded-2xl bg-sky-50 text-sky-600 hover:bg-sky-100 transition">
-                <i data-lucide="menu" class="w-6 h-6" x-show="!mobileMenuOpen"></i>
-                <i data-lucide="x" class="w-6 h-6" x-show="mobileMenuOpen" x-cloak></i>
-            </button>
+    <div class="max-w-md w-full bg-slate-800 rounded-2xl shadow-2xl border border-slate-700 overflow-hidden transform hover:scale-[1.01] transition-all duration-300">
+        
+        <!-- Header Decor -->
+        <div class="h-32 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 relative">
+            <div class="absolute inset-0 bg-black/10"></div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div x-show="mobileMenuOpen" x-transition class="md:hidden bg-white/95 border-b border-sky-100 px-6 py-4 space-y-2 text-center cute-font text-slate-700" x-cloak>
-            <a @click="mobileMenuOpen = false" href="#profile" class="block py-2 rounded-xl hover:bg-sky-50 text-sky-800">เกี่ยวกับอุ้ม</a>
-            <a @click="mobileMenuOpen = false" href="#sop" class="block py-2 rounded-xl hover:bg-sky-50 text-sky-800">ความตั้งใจศึกษาต่อ</a>
-            <a @click="mobileMenuOpen = false" href="#education" class="block py-2 rounded-xl hover:bg-sky-50 text-sky-800">ประวัติการศึกษา</a>
-            <a @click="mobileMenuOpen = false" href="#activities" class="block py-2 rounded-xl hover:bg-sky-50 text-sky-800">กิจกรรมและผลงาน</a>
-            <a @click="mobileMenuOpen = false" href="#certificates" class="block py-2 rounded-xl hover:bg-sky-50 text-sky-800">เกียรติบัตร</a>
-            <a @click="mobileMenuOpen = false" href="#contact" class="block py-2 rounded-xl bg-sky-500 text-white mt-2">ช่องทางการติดต่อ</a>
-        </div>
-    </header>
-
-    <main class="flex-grow">
-        <!-- Hero Section -->
-        <section id="home" class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
-            <!-- Decorative Background Blobs -->
-            <div class="absolute top-10 left-10 w-72 h-72 bg-sky-200/50 rounded-full blur-3xl -z-10 animate-pulse"></div>
-            <div class="absolute bottom-10 right-10 w-96 h-96 bg-blue-100/60 rounded-full blur-3xl -z-10"></div>
+        <!-- Profile Content -->
+        <div class="px-6 pb-6 text-center relative">
             
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-100/80 border border-sky-200 text-sky-700 text-sm font-medium mb-6 shadow-xs animate-bounce">
-                    <span>💙</span> ยินดีต้อนรับสู่แฟ้มสะสมผลงาน
-                </div>
-
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold cute-font text-slate-800 tracking-tight mb-4">
-                    นางสาวอรชุมา บุญมาตุ่น <span class="text-sky-500 font-normal">(อุ้ม)</span>
-                </h1>
-                <p class="text-lg sm:text-xl text-sky-600 font-light max-w-2xl mx-auto mb-6">
-                    Miss Onchuma Boonmatoon
-                </p>
-
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-sky-100 shadow-xl max-w-2xl mx-auto relative group hover:border-sky-300 transition duration-300">
-                    <div class="absolute -top-4 -left-4 text-3xl">🌿</div>
-                    <div class="absolute -bottom-4 -right-4 text-3xl">✨</div>
-                    <p class="cute-font text-xl sm:text-2xl text-sky-800 leading-relaxed font-medium italic">
-                        "สร้างสรรค์พลังบวกให้ตัวเอง และส่งต่อให้ผู้อื่น"
-                    </p>
-                    <div class="mt-4 pt-4 border-t border-sky-50 flex items-center justify-center gap-2 text-xs text-slate-500">
-                        <i data-lucide="graduation-cap" class="w-4 h-4 text-sky-500"></i>
-                        <span>สาขาวิชาสาธารณสุขชุมชน | คณะสาธารณสุขศาสตร์</span>
-                    </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-                    <a href="#profile" class="px-8 py-3.5 bg-sky-500 hover:bg-sky-600 text-white rounded-2xl font-medium shadow-lg shadow-sky-200 transition hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2">
-                        <i data-lucide="user" class="w-5 h-5"></i> ทำความรู้จักกัน
-                    </a>
-                    <a href="#activities" class="px-8 py-3.5 bg-white hover:bg-sky-50 text-sky-700 border border-sky-200 rounded-2xl font-medium shadow-xs transition hover:-translate-y-0.5 flex items-center gap-2">
-                        <i data-lucide="award" class="w-5 h-5 text-sky-500"></i> ดูผลงานและกิจกรรม
-                    </a>
-                </div>
+            <div class="relative -mt-16 mb-4 inline-block">
+                <img 
+                    id="profile-img" 
+                    src="https://raw.githubusercontent.com/OnchumaBoonmatoon/onchuma-aa/main/1787213535183.jpg" 
+                    alt="Onchuma Profile Picture" 
+                    class="w-32 h-32 rounded-full border-4 border-slate-800 shadow-xl object-cover bg-slate-700 mx-auto"
+                    onerror="handleImageError(this)"
+                />
+                <span class="absolute bottom-1 right-1 w-4 h-4 bg-emerald-500 border-2 border-slate-800 rounded-full" title="Online"></span>
             </div>
-        </section>
 
-        <!-- Profile & Personal Info Section -->
-        <section id="profile" class="py-16 bg-white/60 relative">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <span class="text-sky-500 font-semibold text-sm uppercase tracking-wider">Profile</span>
-                    <h2 class="text-3xl font-bold cute-font text-slate-800 mt-1">ข้อมูลส่วนตัว</h2>
-                    <div class="w-12 h-1 bg-sky-400 rounded-full mx-auto mt-2"></div>
-                </div>
+            <!-- Profile Info -->
+            <h1 class="text-2xl font-semibold text-white tracking-wide">Onchuma Boonmatoon</h1>
+            <p class="text-sm text-slate-400 mt-1">@OnchumaBoonmatoon</p>
 
-                <div class="grid md:grid-cols-3 gap-8 items-start">
-                    <!-- Profile Card -->
-                    <div class="bg-white rounded-3xl p-6 border border-sky-100 shadow-md text-center md:col-span-1 relative overflow-hidden">
-                        <div class="w-32 h-32 mx-auto bg-sky-100 rounded-full flex items-center justify-center text-5xl mb-4 shadow-inner border-4 border-white">
-                            👩‍⚕️
-                        </div>
-                        <h3 class="cute-font text-xl font-bold text-slate-800">อรชุมา บุญมาตุ่น</h3>
-                        <p class="text-sky-600 text-sm font-medium">ชื่อเล่น: อุ้ม</p>
-                        <p class="text-slate-500 text-xs mt-1">เกิด 7 สิงหาคม 2550 (อายุ 19 ปี)</p>
-
-                        <div class="mt-6 pt-6 border-t border-slate-100 space-y-2 text-left text-sm">
-                            <div class="flex items-center gap-2 text-slate-600">
-                                <span class="w-2 h-2 rounded-full bg-sky-400"></span>
-                                <span><strong>สัญชาติ:</strong> ไทย</span>
-                            </div>
-                            <div class="flex items-center gap-2 text-slate-600">
-                                <span class="w-2 h-2 rounded-full bg-sky-400"></span>
-                                <span><strong>เชื้อชาติ:</strong> ไทย</span>
-                            </div>
-                            <div class="flex items-center gap-2 text-slate-600">
-                                <span class="w-2 h-2 rounded-full bg-sky-400"></span>
-                                <span><strong>ศาสนา:</strong> พุทธ</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Details & Skills -->
-                    <div class="md:col-span-2 space-y-6">
-                        <!-- Current Studying Banner -->
-                        <div class="bg-gradient-to-r from-sky-500 to-blue-500 text-white rounded-3xl p-6 shadow-md relative overflow-hidden">
-                            <div class="absolute right-0 bottom-0 opacity-10 transform translate-x-4 translate-y-4">
-                                <i data-lucide="building-2" class="w-48 h-48"></i>
-                            </div>
-                            <div class="relative z-10">
-                                <span class="bg-white/20 text-white text-xs px-3 py-1 rounded-full uppercase tracking-wider font-medium">สถานศึกษาปัจจุบัน</span>
-                                <h4 class="cute-font text-xl font-bold mt-2">วิทยาลัยการสาธารณสุขสิรินธร จังหวัดขอนแก่น</h4>
-                                <p class="text-sky-100 text-sm mt-1">คณะสาธารณสุขศาสตร์ | สาขาวิชาสาธารณสุขชุมชน</p>
-                            </div>
-                        </div>
-
-                        <!-- Skills Section -->
-                        <div id="skills" class="bg-white rounded-3xl p-6 border border-sky-100 shadow-md">
-                            <h4 class="cute-font text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
-                                <i data-lucide="sparkles" class="w-5 h-5 text-sky-500"></i> ทักษะและความสามารถ (Skills)
-                            </h4>
-                            <div class="grid grid-cols-2 sm:grid-cols-2 gap-3">
-                                <div class="p-3 bg-sky-50 rounded-2xl flex items-center gap-3 border border-sky-100">
-                                    <div class="p-2 bg-white rounded-xl text-sky-500 shadow-xs"><i data-lucide="crown" class="w-5 h-5"></i></div>
-                                    <span class="text-sm font-medium text-slate-700">ความเป็นผู้นำ</span>
-                                </div>
-                                <div class="p-3 bg-sky-50 rounded-2xl flex items-center gap-3 border border-sky-100">
-                                    <div class="p-2 bg-white rounded-xl text-sky-500 shadow-xs"><i data-lucide="users" class="w-5 h-5"></i></div>
-                                    <span class="text-sm font-medium text-slate-700">การทำงานเป็นทีม</span>
-                                </div>
-                                <div class="p-3 bg-sky-50 rounded-2xl flex items-center gap-3 border border-sky-100">
-                                    <div class="p-2 bg-white rounded-xl text-sky-500 shadow-xs"><i data-lucide="brain-circuit" class="w-5 h-5"></i></div>
-                                    <span class="text-sm font-medium text-slate-700">แก้ปัญหาเฉพาะหน้า</span>
-                                </div>
-                                <div class="p-3 bg-sky-50 rounded-2xl flex items-center gap-3 border border-sky-100">
-                                    <div class="p-2 bg-white rounded-xl text-sky-500 shadow-xs"><i data-lucide="trophy" class="w-5 h-5"></i></div>
-                                    <span class="text-sm font-medium text-slate-700">เล่นกีฬา (ฟุตบอล/เปตอง)</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Family Background -->
-                        <div class="bg-white rounded-3xl p-6 border border-sky-100 shadow-md">
-                            <h4 class="cute-font text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                                <i data-lucide="heart-handshake" class="w-5 h-5 text-sky-500"></i> ข้อมูลครอบครัว
-                            </h4>
-                            <div class="grid sm:grid-cols-2 gap-4 text-sm">
-                                <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100">
-                                    <p class="text-slate-500 text-xs">บิดา</p>
-                                    <p class="font-medium text-slate-800">นายประเสริฐ บุญมาตุ่น (อายุ 45 ปี)</p>
-                                    <p class="text-xs text-slate-600 mt-1">อาชีพ: เกษตรกร | โทร: 080-876-8716</p>
-                                </div>
-                                <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100">
-                                    <p class="text-slate-500 text-xs">มารดา</p>
-                                    <p class="font-medium text-slate-800">นางศศิธร บุญมาตุ่น (อายุ 50 ปี)</p>
-                                    <p class="text-xs text-slate-600 mt-1">อาชีพ: ค้าขาย | โทร: 083-363-1064</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Status Indicator -->
+            <div id="image-status" class="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                โหลดรูปภาพจาก GitHub สำเร็จ
             </div>
-        </section>
 
-        <!-- Statement of Purpose (SOP) Section -->
-        <section id="sop" class="py-16 relative">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-white rounded-3xl p-8 sm:p-10 border border-sky-100 shadow-lg relative overflow-hidden">
-                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-sky-100 rounded-full blur-2xl -z-0"></div>
-                    
-                    <div class="relative z-10">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="p-3 bg-sky-100 rounded-2xl text-sky-600">
-                                <i data-lucide="file-text" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <span class="text-sky-500 font-semibold text-xs uppercase tracking-wider">Statement of Purpose</span>
-                                <h3 class="text-2xl font-bold cute-font text-slate-800">เหตุผลและความตั้งใจในการศึกษาต่อ</h3>
-                            </div>
-                        </div>
+            <!-- Actions & Links -->
+            <div class="mt-6 border-t border-slate-700/60 pt-4 flex flex-col gap-2.5">
+                <a 
+                    href="https://github.com/OnchumaBoonmatoon/onchuma-aa/blob/main/1787213535183.jpg" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-medium rounded-xl transition-colors duration-200 text-sm shadow-lg shadow-indigo-600/20"
+                >
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                    </svg>
+                    ดูไฟล์ต้นฉบับบน GitHub
+                </a>
 
-                        <div class="space-y-4 text-slate-600 leading-relaxed text-sm sm:text-base">
-                            <p>
-                                แฟ้มสะสมผลงานฉบับนี้ เป็นการรวบรวมผลงานสำหรับการสมัครเข้าศึกษาต่อในสายงานสาธารณสุขศาสตร์ ดิฉันนางสาวอรชุมา บุญมาตุ่น ได้สะสมประสบการณ์และผลงานทั้งด้านการเรียน การทำกิจกรรม และการฝึกประสบการณ์ในสถานบริการสาธารณสุข เพื่อยืนยันถึงความตั้งใจและความมุ่งมั่นของดิฉัน
-                            </p>
-                            <p class="bg-sky-50/60 p-4 rounded-2xl border-l-4 border-sky-400 italic">
-                                "ดิฉันมีความสนใจในด้านสุขภาพ การส่งเสริมพฤติกรรมสุขภาพ และการดูแลประชาชนให้มีคุณภาพชีวิตที่ดีมาตั้งแต่ระดับมัธยมศึกษา โดยเฉพาะช่วงที่ได้เข้าร่วมฝึกประสบการณ์ที่โรงพยาบาลส่งเสริมสุขภาพตำบล (รพ.สต.พระบุ) ทำให้ได้เห็นถึงความสำคัญของการป้องกันโรคมากกว่าการรักษาโรค และเข้าใจบทบาทของเจ้าหน้าที่สาธารณสุขอย่างแท้จริง"
-                            </p>
-                            <p>
-                                ดิฉันมีความฝันอยากเป็นนักสาธารณสุขที่ดี มีจิตอาสาและความรับผิดชอบ เพื่อร่วมสร้างสังคมที่มีสุขภาพดีอย่างยั่งยืน ความสุขของดิฉันคือการได้เห็นผู้คนมีสุขภาพที่ดี และสามารถเข้าถึงบริการสุขภาพอย่างทั่วถึง ดิฉันพร้อมที่จะตั้งใจเรียนรู้ ฝึกฝน และพัฒนาตนเองให้เป็นบุคลากรที่มีคุณภาพ
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <button 
+                    onclick="copyLink()" 
+                    class="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 font-medium rounded-xl transition-colors duration-200 text-sm"
+                >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 002-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                    คัดลอกลิงก์รูปภาพ (Raw URL)
+                </button>
             </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="py-16 bg-white/60">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <span class="text-sky-500 font-semibold text-sm uppercase tracking-wider">Education</span>
-                    <h2 class="text-3xl font-bold cute-font text-slate-800 mt-1">ประวัติการศึกษา</h2>
-                    <div class="w-12 h-1 bg-sky-400 rounded-full mx-auto mt-2"></div>
-                </div>
-
-                <!-- Timeline -->
-                <div class="relative border-l-2 border-sky-200 ml-4 sm:ml-32 space-y-8">
-
-                    <!-- Current -->
-                    <div class="relative pl-6 sm:pl-8 group">
-                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-sky-500 border-4 border-white shadow-xs"></div>
-                        <div class="hidden sm:block absolute -left-32 top-1 w-24 text-right text-xs font-bold text-sky-600 bg-sky-100 py-1 px-2 rounded-full">
-                            ปัจจุบัน
-                        </div>
-                        <div class="bg-white rounded-2xl p-5 border border-sky-200 shadow-sm hover:shadow-md transition">
-                            <span class="sm:hidden inline-block text-xs font-bold text-sky-600 bg-sky-100 py-0.5 px-2 rounded-full mb-2">ปัจจุบัน</span>
-                            <h4 class="cute-font text-lg font-bold text-slate-800">วิทยาลัยการสาธารณสุขสิรินธร จังหวัดขอนแก่น</h4>
-                            <p class="text-sm text-sky-600">คณะสาธารณสุขศาสตร์ สาขาวิชาสาธารณสุขชุมชน</p>
-                        </div>
-                    </div>
-
-                    <!-- High School -->
-                    <div class="relative pl-6 sm:pl-8 group">
-                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-sky-300 border-4 border-white"></div>
-                        <div class="hidden sm:block absolute -left-32 top-1 w-24 text-right text-xs text-slate-500 bg-slate-100 py-1 px-2 rounded-full">
-                            ม.4 - ม.6
-                        </div>
-                        <div class="bg-white rounded-2xl p-5 border border-sky-100 shadow-sm hover:shadow-md transition">
-                            <div class="flex justify-between items-start flex-wrap gap-2">
-                                <div>
-                                    <span class="sm:hidden inline-block text-xs text-slate-500 bg-slate-100 py-0.5 px-2 rounded-full mb-1">ม.4 - ม.6</span>
-                                    <h4 class="cute-font text-lg font-bold text-slate-800">โรงเรียนประชารัฐวิทยาเสริม</h4>
-                                    <p class="text-xs text-slate-500">ต.บ้านโต้น อ.พระยืน จ.ขอนแก่น</p>
-                                </div>
-                                <span class="bg-emerald-50 text-emerald-700 font-bold text-xs px-3 py-1.5 rounded-xl border border-emerald-200">
-                                    GPAX: 3.94
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Junior High School -->
-                    <div class="relative pl-6 sm:pl-8 group">
-                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-sky-300 border-4 border-white"></div>
-                        <div class="hidden sm:block absolute -left-32 top-1 w-24 text-right text-xs text-slate-500 bg-slate-100 py-1 px-2 rounded-full">
-                            ม.1 - ม.3
-                        </div>
-                        <div class="bg-white rounded-2xl p-5 border border-sky-100 shadow-sm hover:shadow-md transition">
-                            <div class="flex justify-between items-start flex-wrap gap-2">
-                                <div>
-                                    <span class="sm:hidden inline-block text-xs text-slate-500 bg-slate-100 py-0.5 px-2 rounded-full mb-1">ม.1 - ม.3</span>
-                                    <h4 class="cute-font text-lg font-bold text-slate-800">โรงเรียนพระบุบ้านหันราษฎร์ประสาท</h4>
-                                    <p class="text-xs text-slate-500">ต.พระบุ อ.พระยืน จ.ขอนแก่น</p>
-                                </div>
-                                <span class="bg-emerald-50 text-emerald-700 font-bold text-xs px-3 py-1.5 rounded-xl border border-emerald-200">
-                                    GPAX: 3.98
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Primary School -->
-                    <div class="relative pl-6 sm:pl-8 group">
-                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-sky-200 border-4 border-white"></div>
-                        <div class="hidden sm:block absolute -left-32 top-1 w-24 text-right text-xs text-slate-500 bg-slate-100 py-1 px-2 rounded-full">
-                            อนุบาล - ป.6
-                        </div>
-                        <div class="bg-white rounded-2xl p-5 border border-sky-100 shadow-sm hover:shadow-md transition">
-                            <div class="flex justify-between items-start flex-wrap gap-2">
-                                <div>
-                                    <span class="sm:hidden inline-block text-xs text-slate-500 bg-slate-100 py-0.5 px-2 rounded-full mb-1">อนุบาล - ป.6</span>
-                                    <h4 class="cute-font text-lg font-bold text-slate-800">โรงเรียนพระบุบ้านหันราษฎร์ประสาท</h4>
-                                    <p class="text-xs text-slate-500">ต.พระบุ อ.พระยืน จ.ขอนแก่น</p>
-                                </div>
-                                <span class="bg-emerald-50 text-emerald-700 font-bold text-xs px-3 py-1.5 rounded-xl border border-emerald-200">
-                                    GPAX: 3.95
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Activities Section -->
-        <section id="activities" class="py-16">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <span class="text-sky-500 font-semibold text-sm uppercase tracking-wider">Activities</span>
-                    <h2 class="text-3xl font-bold cute-font text-slate-800 mt-1">กิจกรรมและผลงานโดดเด่น</h2>
-                    <div class="w-12 h-1 bg-sky-400 rounded-full mx-auto mt-2"></div>
-                </div>
-
-                <!-- Activities Grid -->
-                <div class="grid md:grid-cols-2 gap-6">
-
-                    <!-- Activity 1 -->
-                    <div class="bg-white rounded-3xl p-6 border border-sky-100 shadow-md hover:shadow-lg transition flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="p-2.5 bg-amber-100 text-amber-600 rounded-2xl text-xl">👑</span>
-                                <div>
-                                    <span class="text-xs font-semibold text-sky-600 bg-sky-50 px-2.5 py-0.5 rounded-full">ด้านความเป็นผู้นำ</span>
-                                    <h3 class="cute-font font-bold text-slate-800 text-lg">ประธานนักเรียน ประจำปีการศึกษา 2567</h3>
-                                </div>
-                            </div>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                                ปฏิบัติหน้าที่ประธานคณะกรรมการนักเรียนโรงเรียนประชารัฐวิทยาเสริม นำทำกิจกรรมต่างๆ เช่น วันไหว้ครู วันวิทยาศาสตร์ งานกีฬาสี งานพิธีการ บริหารจัดการงานร่วมกับสภานักเรียนและแก้ไขปัญหาเฉพาะหน้า
-                            </p>
-                        </div>
-                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                            <span>โรงเรียนประชารัฐวิทยาเสริม</span>
-                            <span class="text-sky-600 font-medium">ปีการศึกษา 2567</span>
-                        </div>
-                    </div>
-
-                    <!-- Activity 2 -->
-                    <div class="bg-white rounded-3xl p-6 border border-sky-100 shadow-md hover:shadow-lg transition flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="p-2.5 bg-rose-100 text-rose-600 rounded-2xl text-xl">🏥</span>
-                                <div>
-                                    <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full">ฝึกประสบการณ์ & จิตอาสา</span>
-                                    <h3 class="cute-font font-bold text-slate-800 text-lg">ฝึกปฏิบัติงานด้านสุขภาพ ณ รพ.สต.พระบุ</h3>
-                                </div>
-                            </div>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                                เป็นจิตอาสาฝึกปฏิบัติงานด้านสุขภาพ ณ โรงพยาบาลส่งเสริมสุขภาพตำบลพระบุ เรียนรู้การคัดกรองสุขภาพ การให้คำแนะนำด้านสุขอนามัย ออกชุมชนร่วมกับเจ้าหน้าที่สาธารณสุข (7-11 ต.ค. 2567)
-                            </p>
-                        </div>
-                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                            <span>รพ.สต.พระบุ อ.พระยืน</span>
-                            <span class="text-sky-600 font-medium">ต.ค. 2567</span>
-                        </div>
-                    </div>
-
-                    <!-- Activity 3 -->
-                    <div class="bg-white rounded-3xl p-6 border border-sky-100 shadow-md hover:shadow-lg transition flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="p-2.5 bg-yellow-100 text-yellow-600 rounded-2xl text-xl">🥇</span>
-                                <div>
-                                    <span class="text-xs font-semibold text-amber-600 bg-amber-50 px-2.5 py-0.5 rounded-full">ด้านกีฬาและการบริหาร</span>
-                                    <h3 class="cute-font font-bold text-slate-800 text-lg">ประธานสีเหลือง กีฬาสีประดู่เกมส์ ครั้งที่ 49</h3>
-                                </div>
-                            </div>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                                วางแผนและบริหารจัดการคณะสีเหลือง รับรางวัลชนะเลิศขบวนพาเหรด และลงแข่งขันฟุตบอลหญิงได้รับรางวัลชนะเลิศ พัฒนาทักษะการทำงานเป็นทีมและน้ำใจนักกีฬา
-                            </p>
-                        </div>
-                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                            <span>ประดู่เกมส์ ครั้งที่ 49</span>
-                            <span class="text-sky-600 font-medium">ชนะเลิศ 2 รายการ</span>
-                        </div>
-                    </div>
-
-                    <!-- Activity 4 -->
-                    <div class="bg-white rounded-3xl p-6 border border-sky-100 shadow-md hover:shadow-lg transition flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="p-2.5 bg-indigo-100 text-indigo-600 rounded-2xl text-xl">🔬</span>
-                                <div>
-                                    <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full">วิทยากร & วิชาการ</span>
-                                    <h3 class="cute-font font-bold text-slate-800 text-lg">วิทยากรประจำค่ายวิทยาศาสตร์และเทคโนโลยี</h3>
-                                </div>
-                            </div>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                                ปฏิบัติหน้าที่วิทยากรให้ความรู้ฐาน "หมึกลอยได้" (ปี 2567) และฐาน "เปลวไฟลอยน้ำ" (ปี 2568) รวมถึงทำหน้าที่ Staff เตรียมจัดงานในกิจกรรมค่ายวิทยาศาสตร์
-                            </p>
-                        </div>
-                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                            <span>ค่ายสวนน้ำสวนสัตว์ขอนแก่น</span>
-                            <span class="text-sky-600 font-medium">ปี 2567 - 2568</span>
-                        </div>
-                    </div>
-
-                    <!-- Activity 5 -->
-                    <div class="bg-white rounded-3xl p-6 border border-sky-100 shadow-md hover:shadow-lg transition flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="p-2.5 bg-sky-100 text-sky-600 rounded-2xl text-xl">🤝</span>
-                                <div>
-                                    <span class="text-xs font-semibold text-sky-600 bg-sky-50 px-2.5 py-0.5 rounded-full">จิตสาธารณะ</span>
-                                    <h3 class="cute-font font-bold text-slate-800 text-lg">หัวหน้ากิจกรรมปฐมนิเทศ & รับน้องใหม่</h3>
-                                </div>
-                            </div>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                                รับผิดชอบจัดกิจกรรมปฐมนิเทศปลูกฝังคุณธรรม จริยธรรม และระเบียบวินัย (รับน้องใหม่สู่รั้วน้ำเงินขาว) ปีการศึกษา 2568 สร้างความสนุกสนานและสายสัมพันธ์อันดีให้น้องๆ
-                            </p>
-                        </div>
-                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                            <span>โรงเรียนประชารัฐวิทยาเสริม</span>
-                            <span class="text-sky-600 font-medium">ปีการศึกษา 2568</span>
-                        </div>
-                    </div>
-
-                    <!-- Activity 6 -->
-                    <div class="bg-white rounded-3xl p-6 border border-sky-100 shadow-md hover:shadow-lg transition flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="p-2.5 bg-emerald-100 text-emerald-600 rounded-2xl text-xl">🚑</span>
-                                <div>
-                                    <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full">กู้ชีพ & ปฐมพยาบาล</span>
-                                    <h3 class="cute-font font-bold text-slate-800 text-lg">ช่วยเหลือผู้ประสบอุบัติเหตุ & อบรม CPR</h3>
-                                </div>
-                            </div>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                                ผ่านการอบรมหลักสูตรฉุกเฉินการแพทย์ CPR ปฐมพยาบาลเบื้องต้น และมีจิตอาสาช่วยเหลือผู้ประสบอุบัติเหตุรถจักรยานล้ม ประสานงานกู้ภัยนำส่งโรงพยาบาลพระยืน (21 ส.ค. 2568)
-                            </p>
-                        </div>
-                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                            <span>ช่วยเหลือสังคม</span>
-                            <span class="text-sky-600 font-medium">จิตอาสา</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Certificates Section with Filter -->
-        <section id="certificates" class="py-16 bg-white/60">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-10">
-                    <span class="text-sky-500 font-semibold text-sm uppercase tracking-wider">Certificates</span>
-                    <h2 class="text-3xl font-bold cute-font text-slate-800 mt-1">เกียรติบัตรและรางวัลที่ได้รับ</h2>
-                    <div class="w-12 h-1 bg-sky-400 rounded-full mx-auto mt-2"></div>
-                </div>
-
-                <!-- Filter Tabs -->
-                <div class="flex flex-wrap justify-center gap-2 mb-8 cute-font text-sm">
-                    <button @click="certFilter = 'all'" 
-                            :class="certFilter === 'all' ? 'bg-sky-500 text-white shadow-md' : 'bg-white text-slate-600 hover:bg-sky-50 border border-sky-100'"
-                            class="px-4 py-2 rounded-2xl transition">
-                        ทั้งหมด
-                    </button>
-                    <button @click="certFilter = 'award'" 
-                            :class="certFilter === 'award' ? 'bg-sky-500 text-white shadow-md' : 'bg-white text-slate-600 hover:bg-sky-50 border border-sky-100'"
-                            class="px-4 py-2 rounded-2xl transition">
-                        🏆 รางวัลชนะเลิศ / ผลงาน
-                    </button>
-                    <button @click="certFilter = 'camp'" 
-                            :class="certFilter === 'camp' ? 'bg-sky-500 text-white shadow-md' : 'bg-white text-slate-600 hover:bg-sky-50 border border-sky-100'"
-                            class="px-4 py-2 rounded-2xl transition">
-                        ⛺ การอบรม / ค่าย
-                    </button>
-                    <button @click="certFilter = 'virtue'" 
-                            :class="certFilter === 'virtue' ? 'bg-sky-500 text-white shadow-md' : 'bg-white text-slate-600 hover:bg-sky-50 border border-sky-100'"
-                            class="px-4 py-2 rounded-2xl transition">
-                        🌟 จิตสาธารณะ / ความประพฤติดี
-                    </button>
-                </div>
-
-                <!-- Certificates Grid -->
-                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    
-                    <template x-for="cert in filteredCertificates()" :key="cert.id">
-                        <div class="bg-white rounded-3xl p-5 border border-sky-100 shadow-sm hover:shadow-md transition flex flex-col justify-between group hover:-translate-y-1">
-                            <div>
-                                <div class="flex items-start justify-between gap-2 mb-3">
-                                    <span class="p-2 rounded-xl text-lg" :class="cert.badgeBg" x-text="cert.icon"></span>
-                                    <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600" x-text="cert.year"></span>
-                                </div>
-                                <h4 class="cute-font font-bold text-slate-800 text-base mb-1 group-hover:text-sky-600 transition" x-text="cert.title"></h4>
-                                <p class="text-xs text-slate-500 mb-3" x-text="cert.detail"></p>
-                            </div>
-                            <div class="pt-3 border-t border-slate-50 flex items-center justify-between text-xs text-slate-400">
-                                <span class="truncate max-w-[180px]" x-text="cert.issuer"></span>
-                                <i data-lucide="award" class="w-4 h-4 text-sky-400"></i>
-                            </div>
-                        </div>
-                    </template>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-16">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-gradient-to-br from-sky-400 to-blue-500 rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden text-center">
-                    <!-- Decorative shapes -->
-                    <div class="absolute -top-12 -left-12 w-40 h-40 bg-white/10 rounded-full blur-xl"></div>
-                    <div class="absolute -bottom-12 -right-12 w-40 h-40 bg-white/10 rounded-full blur-xl"></div>
-
-                    <span class="bg-white/20 text-white text-xs px-3 py-1 rounded-full uppercase tracking-wider font-medium inline-block mb-3">Contact Me</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold cute-font mb-2">ช่องทางการติดต่อ</h2>
-                    <p class="text-sky-100 text-sm max-w-md mx-auto mb-8">
-                        ยินดีพูดคุย แลกเปลี่ยนเรียนรู้ และร่วมกิจกรรมสร้างสรรค์ประโยชน์เพื่อส่วนรวมค่ะ
-                    </p>
-
-                    <div class="grid sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-left">
-                        <!-- Phone -->
-                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 hover:bg-white/20 transition">
-                            <div class="flex items-center gap-3">
-                                <div class="p-2 bg-white/20 rounded-xl text-white">
-                                    <i data-lucide="phone" class="w-5 h-5"></i>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="text-xs text-sky-100">เบอร์โทรศัพท์</p>
-                                    <a href="tel:0629879937" class="text-sm font-semibold text-white hover:underline truncate block">062-987-9937</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Email -->
-                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 hover:bg-white/20 transition">
-                            <div class="flex items-center gap-3">
-                                <div class="p-2 bg-white/20 rounded-xl text-white">
-                                    <i data-lucide="mail" class="w-5 h-5"></i>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="text-xs text-sky-100">อีเมล</p>
-                                    <a href="mailto:xrchumabuymatun@gmail.com" class="text-xs font-semibold text-white hover:underline truncate block">xrchumabuymatun@gmail.com</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Facebook -->
-                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 hover:bg-white/20 transition">
-                            <div class="flex items-center gap-3">
-                                <div class="p-2 bg-white/20 rounded-xl text-white">
-                                    <i data-lucide="facebook" class="w-5 h-5"></i>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="text-xs text-sky-100">Facebook</p>
-                                    <span class="text-xs font-semibold text-white truncate block">Onchuma Boonmatoon</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Address -->
-                    <div class="mt-6 pt-6 border-t border-white/20 text-xs text-sky-100 flex items-center justify-center gap-2">
-                        <i data-lucide="map-pin" class="w-4 h-4"></i>
-                        <span>110 หมู่ 1 ต.พระบุ อ.พระยืน จ.ขอนแก่น 40320</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-sky-100 py-6 text-center text-xs text-slate-400">
-        <div class="max-w-5xl mx-auto px-4">
-            <p>© PORTFOLIO - นางสาวอรชุมา บุญมาตุ่น (อุ้ม) | สาขาวิชาสาธารณสุขชุมชน</p>
-            <p class="mt-1 text-slate-300">Created with Pastel Sky Minimal Theme</p>
         </div>
-    </footer>
+    </div>
 
-    <!-- Alpine.js Application Logic -->
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-5 bg-emerald-600 text-white px-4 py-2 rounded-xl shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 text-sm font-medium">
+        คัดลอกลิงก์เรียบร้อยแล้ว!
+    </div>
+
     <script>
-        function portfolioApp() {
-            return {
-                mobileMenuOpen: false,
-                certFilter: 'all',
-                certificates: [
-                    {
-                        id: 1,
-                        title: 'นักเรียนดีเด่น ด้านการมีจิตสาธารณะ บำเพ็ญประโยชน์',
-                        detail: 'ได้รับคัดเลือกเป็นนักเรียนดีเด่นประจำปีการศึกษา 2568',
-                        issuer: 'รร.ประชารัฐวิทยาเสริม',
-                        year: '2568',
-                        category: 'virtue',
-                        icon: '🌟',
-                        badgeBg: 'bg-amber-100 text-amber-600'
-                    },
-                    {
-                        id: 2,
-                        title: 'ชนะเลิศ การประกวดป้ายคำขวัญ วันต่อต้านยาเสพติดโลก',
-                        detail: 'คำขวัญ "มุ่งมั่น เชื่อใจ ห่างไกลสารเสพติด"',
-                        issuer: 'รร.ประชารัฐวิทยาเสริม',
-                        year: '2568',
-                        category: 'award',
-                        icon: '🥇',
-                        badgeBg: 'bg-yellow-100 text-yellow-600'
-                    },
-                    {
-                        id: 3,
-                        title: 'ชนะเลิศ การประกวดคำขวัญ วันต่อต้านยาเสพติด',
-                        detail: 'คำขวัญ "ร่วมใจห่างไกลสารเสพติด เพราะหากพลาดเพียงนิด ชีวิตพังทลาย"',
-                        issuer: 'รร.ประชารัฐวิทยาเสริม',
-                        year: '2566',
-                        category: 'award',
-                        icon: '🏆',
-                        badgeBg: 'bg-yellow-100 text-yellow-600'
-                    },
-                    {
-                        id: 4,
-                        title: 'ชนะเลิศ การประกวดคำขวัญ วันสิ่งแวดล้อมโลก',
-                        detail: 'คำขวัญ "ใช้พลังงานอย่างรู้ค่า ดีกว่าวันข้างหน้าไม่มีอะไรใช้"',
-                        issuer: 'รร.ประชารัฐวิทยาเสริม',
-                        year: '2566',
-                        category: 'award',
-                        icon: '🌿',
-                        badgeBg: 'bg-emerald-100 text-emerald-600'
-                    },
-                    {
-                        id: 5,
-                        title: 'เหรียญเงิน รองชนะเลิศอันดับ 1 การประดิษฐ์บายศรีสู่ขวัญ',
-                        detail: 'งานศิลปหัตถกรรมนักเรียน ระดับจังหวัดขอนแก่น (ม.4-ม.6)',
-                        issuer: 'สพม.ขอนแก่น & อบจ.ขอนแก่น',
-                        year: '2566',
-                        category: 'award',
-                        icon: '🥈',
-                        badgeBg: 'bg-slate-100 text-slate-600'
-                    },
-                    {
-                        id: 6,
-                        title: 'ชนะเลิศ การประดิษฐ์การ์ดคริสต์มาส',
-                        detail: 'Christmas Card Competition on Christmas Day',
-                        issuer: 'Foreign Language Dept.',
-                        year: '2567',
-                        category: 'award',
-                        icon: '🎄',
-                        badgeBg: 'bg-rose-100 text-rose-600'
-                    },
-                    {
-                        id: 7,
-                        title: 'รองชนะเลิศอันดับ 1 การแข่งขันคัดลายมือ',
-                        detail: 'เนื่องในกิจกรรมวันสุนทรภู่ ระดับชั้น ม.4-ม.6',
-                        issuer: 'รร.ประชารัฐวิทยาเสริม',
-                        year: '2566',
-                        category: 'award',
-                        icon: '✍️',
-                        badgeBg: 'bg-sky-100 text-sky-600'
-                    },
-                    {
-                        id: 8,
-                        title: 'วิทยากรประจำฐานเปลวไฟลอยน้ำ',
-                        detail: 'กิจกรรมค่ายวิทยาศาสตร์ ณ ค่ายสวนน้ำสวนสัตว์ขอนแก่น',
-                        issuer: 'รร.ประชารัฐวิทยาเสริม',
-                        year: '2568',
-                        category: 'camp',
-                        icon: '🔥',
-                        badgeBg: 'bg-orange-100 text-orange-600'
-                    },
-                    {
-                        id: 9,
-                        title: 'ผ่านการอบรมค่าย "สพฐ. สร้างสรรค์ปันสุข" (OSH Camp)',
-                        detail: 'โครงการ OBEC Sharing Happiness Camp ประจำปี 2567',
-                        issuer: 'สพม.ขอนแก่น & ปปส. ภาค 4',
-                        year: '2567',
-                        category: 'camp',
-                        icon: '⛺',
-                        badgeBg: 'bg-indigo-100 text-indigo-600'
-                    },
-                    {
-                        id: 10,
-                        title: 'ผ่านการอบรมเชิงปฏิบัติการ "โครงการขับเคลื่อนสภานักเรียน"',
-                        detail: 'เสริมสร้างศักยภาพสภานักเรียนและการนำกิจกรรม',
-                        issuer: 'สพม.ขอนแก่น',
-                        year: '2567',
-                        category: 'camp',
-                        icon: '🏛️',
-                        badgeBg: 'bg-blue-100 text-blue-600'
-                    },
-                    {
-                        id: 11,
-                        title: 'เข้าร่วมแข่งขันทักษะทางวิทยาศาสตร์ (เคมี)',
-                        detail: 'งานสัปดาห์วิทยาศาสตร์แห่งชาติส่วนภูมิภาค',
-                        issuer: 'มหาวิทยาลัยราชภัฏเลย',
-                        year: '2567',
-                        category: 'camp',
-                        icon: '🧪',
-                        badgeBg: 'bg-purple-100 text-purple-600'
-                    },
-                    {
-                        id: 12,
-                        title: 'จิตอาสาฟ้อนรำ งานประเพณีรำลึกชาตกาล 121 ปี',
-                        detail: 'สมเด็จพระพุฒาจารย์ (อาจ อาสภมหาเถร)',
-                        issuer: 'เทศบาลตำบลบ้านโต้น',
-                        year: '2567',
-                        category: 'virtue',
-                        icon: '🙏',
-                        badgeBg: 'bg-pink-100 text-pink-600'
-                    }
-                ],
-                filteredCertificates() {
-                    if (this.certFilter === 'all') {
-                        return this.certificates;
-                    }
-                    return this.certificates.filter(c => c.category === this.certFilter);
-                }
+        // Function to handle image fallback if GitHub raw link fails or format changes
+        function handleImageError(img) {
+            console.error('Failed to load image from primary raw source.');
+            const statusEl = document.getElementById('image-status');
+            
+            // Try fallback URL format
+            const secondaryUrl = "https://cdn.jsdelivr.net/gh/OnchumaBoonmatoon/onchuma-aa@main/1787213535183.jpg";
+            
+            if (img.src !== secondaryUrl) {
+                img.src = secondaryUrl;
+            } else {
+                // If secondary fails, set placeholder
+                img.src = "https://placehold.co/300x300/334155/f8fafc?text=Onchuma";
+                statusEl.className = "mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20";
+                statusEl.innerHTML = `
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                    </svg>
+                    ไม่สามารถโหลดรูปภาพจาก GitHub ได้
+                `;
             }
         }
 
-        // Initialize Lucide Icons
-        window.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-        });
+        // Copy raw image URL
+        function copyLink() {
+            const rawUrl = "https://raw.githubusercontent.com/OnchumaBoonmatoon/onchuma-aa/main/1787213535183.jpg";
+            
+            const tempInput = document.createElement('input');
+            tempInput.value = rawUrl;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            // Toast effect
+            const toast = document.getElementById('toast');
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+            toast.classList.add('opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0', 'pointer-events-none');
+            }, 2500);
+        }
     </script>
 </body>
 </html>
