@@ -1,1 +1,129 @@
 https://raw.githubusercontent.com/OnchumaBoonmatoon/onchuma-aa/main/1787213535183.jpg
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรไฟล์ - Onchuma Boonmatoon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col items-center justify-center p-4">
+
+    <div class="max-w-md w-full bg-slate-800 rounded-2xl shadow-2xl border border-slate-700 overflow-hidden transform hover:scale-[1.01] transition-all duration-300">
+        
+        <!-- Header Decor -->
+        <div class="h-32 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 relative">
+            <div class="absolute inset-0 bg-black/10"></div>
+        </div>
+
+        <!-- Profile Content -->
+        <div class="px-6 pb-6 text-center relative">
+            
+            <div class="relative -mt-16 mb-4 inline-block">
+                <img 
+                    id="profile-img" 
+                    src="https://raw.githubusercontent.com/OnchumaBoonmatoon/onchuma-aa/main/1787213535183.jpg" 
+                    alt="Onchuma Profile Picture" 
+                    class="w-32 h-32 rounded-full border-4 border-slate-800 shadow-xl object-cover bg-slate-700 mx-auto"
+                    onerror="handleImageError(this)"
+                />
+                <span class="absolute bottom-1 right-1 w-4 h-4 bg-emerald-500 border-2 border-slate-800 rounded-full" title="Online"></span>
+            </div>
+
+            <!-- Profile Info -->
+            <h1 class="text-2xl font-semibold text-white tracking-wide">Onchuma Boonmatoon</h1>
+            <p class="text-sm text-slate-400 mt-1">@OnchumaBoonmatoon</p>
+
+            <!-- Status Indicator -->
+            <div id="image-status" class="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                โหลดรูปภาพจาก GitHub สำเร็จ
+            </div>
+
+            <!-- Actions & Links -->
+            <div class="mt-6 border-t border-slate-700/60 pt-4 flex flex-col gap-2.5">
+                <a 
+                    href="https://github.com/OnchumaBoonmatoon/onchuma-aa/blob/main/1787213535183.jpg" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-medium rounded-xl transition-colors duration-200 text-sm shadow-lg shadow-indigo-600/20"
+                >
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                    </svg>
+                    ดูไฟล์ต้นฉบับบน GitHub
+                </a>
+
+                <button 
+                    onclick="copyLink()" 
+                    class="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-slate-700 hover:bg-slate-600 active:bg-slate-800 text-slate-200 font-medium rounded-xl transition-colors duration-200 text-sm"
+                >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 002-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                    คัดลอกลิงก์รูปภาพ (Raw URL)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-5 bg-emerald-600 text-white px-4 py-2 rounded-xl shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 text-sm font-medium">
+        คัดลอกลิงก์เรียบร้อยแล้ว!
+    </div>
+
+    <script>
+        // Function to handle image fallback if GitHub raw link fails or format changes
+        function handleImageError(img) {
+            console.error('Failed to load image from primary raw source.');
+            const statusEl = document.getElementById('image-status');
+            
+            // Try fallback URL format
+            const secondaryUrl = "https://cdn.jsdelivr.net/gh/OnchumaBoonmatoon/onchuma-aa@main/1787213535183.jpg";
+            
+            if (img.src !== secondaryUrl) {
+                img.src = secondaryUrl;
+            } else {
+                // If secondary fails, set placeholder
+                img.src = "https://placehold.co/300x300/334155/f8fafc?text=Onchuma";
+                statusEl.className = "mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20";
+                statusEl.innerHTML = `
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                    </svg>
+                    ไม่สามารถโหลดรูปภาพจาก GitHub ได้
+                `;
+            }
+        }
+
+        // Copy raw image URL
+        function copyLink() {
+            const rawUrl = "https://raw.githubusercontent.com/OnchumaBoonmatoon/onchuma-aa/main/1787213535183.jpg";
+            
+            const tempInput = document.createElement('input');
+            tempInput.value = rawUrl;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            // Toast effect
+            const toast = document.getElementById('toast');
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+            toast.classList.add('opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0', 'pointer-events-none');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
